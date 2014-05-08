@@ -1,5 +1,5 @@
 /*
- * mcp7940.h - library for MCP7940x Real Time Clock
+ * mcp7940 - library for MCP7940x Real Time Clock
  * 
  * Copyright (c) Anarduino.com
  * This library uses Arduino Time.h library functions
@@ -37,7 +37,7 @@
 #include "Arduino.h"
 #include <Time.h>
 #include <Wire.h>
-#include "MCP7940RTC.h"
+#include "mcp7940.h"
 typedef uint8_t byte;
 
 #define MCP7940_CTRL_ID 0x6F 
