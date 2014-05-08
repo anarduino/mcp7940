@@ -26,6 +26,15 @@
  * ---------------------------------------------------------------------
  * The purpose of this is to provide a very simple example of reading and 
  * writing data to the RTC ram.
+ *
+ * PROGRAM OUTPUT:  you should see the following in a terminal window when running the demo:
+ * ---------------------------------------------------------------------
+Startup...
+Clear first 16bytes of RTC static ram, read back, write pattern/read back
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+ * ---------------------------------------------------------------------
+ *
  */
 #include <SPI.h>
 #include <Wire.h>
