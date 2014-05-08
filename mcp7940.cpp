@@ -150,7 +150,7 @@ void mcp7940::getDateStr(char *dateStr) {
 }
 
 // PUBLIC FUNCTIONS
-time_t MCP7940RTC::get() { // Aquire data from buffer and convert to time_t
+time_t mcp7940::get() { // Aquire data from buffer and convert to time_t
   tmElements_t tm;
   read(tm);
   return(makeTime(tm));
@@ -260,7 +260,7 @@ uint8_t mcp7940::getHour() {
   return b;
 }
 
-uint8_t MCP7940RTC::getDayOfWeek() {
+uint8_t mcp7940::getDayOfWeek() {
   byte b=0;
   Wire.beginTransmission(MCP7940_CTRL_ID);
   Wire.write((byte)3);
