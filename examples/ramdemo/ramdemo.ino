@@ -1,3 +1,32 @@
+/*
+ * ramdemo.ino - simple RTC ram RD/WR demo for the MCP7940N Real Time Clock
+ * 
+ * Copyright (c) Anarduino.com
+ * This library uses Arduino Time.h library functions
+ *
+ * The library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ * 
+ * HISTORY:
+ * ---------------------------------------------------------------------
+ * 2013-07 - Initial 
+ *
+ * PURPOSE:
+ * ---------------------------------------------------------------------
+ * The purpose of this is to provide a very simple example of reading and 
+ * writing data to the RTC ram.
+ */
 #include <SPI.h>
 #include <Wire.h>
 #include <Time.h>
@@ -12,11 +41,9 @@ void setup() {
   // Clear 16bytes of RTC memory
   // Write a pattern
   // print the results
+  // perform test once
   Serial.println("Clear first 16bytes of RTC static ram, read back, write pattern/read back");
-  writeRTCmem(0,16,0);
-  printRTCmem(0,16);  
-  writeRTCmem(0,16,-1);
-  printRTCmem(0,16);  
+  simpleTest();
 }
 
 void loop() {
@@ -69,3 +96,9 @@ void printRTCmem(int addr, int len) {
   Serial.println();
 }
 
+void simpleTest() {
+  writeRTCmem(0,16,0);
+  printRTCmem(0,16);  
+  writeRTCmem(0,16,-1);
+  printRTCmem(0,16);  
+}
